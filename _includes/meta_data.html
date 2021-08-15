@@ -1,0 +1,35 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<title>{{ page.title | truncate: 70, '...' }}</title>
+<meta name="title" content="{{ page.title | xml_escape | truncate: 70, '...' }}">
+{% feed_meta %}
+<meta property="og:locale" content="en_US" />
+<meta property="og:title" content="{{ page.title | xml_escape | truncate: 70, '...' }}" />
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="{{ page.title | xml_escape | truncate: 70, '...' }}" />
+{%- if page.layout == 'post' %}
+<meta property="og:type" content="article" />
+{%- else %}
+<meta property="og:type" content="profile" />
+{% endif %}
+{%- if page.description %}
+<meta name="description" content="{{ page.description | strip_html | strip_newlines | xml_escape | truncate: 160, '...' }}" />
+<meta property="og:description" content="{{ page.description | strip_html | strip_newlines | xml_escape | truncate: 300, '...' }}" />
+<meta name="twitter:description" content="{{ page.description | strip_html | strip_newlines | xml_escape | truncate: 200, '...' }}" />
+{%- else %}
+<meta name="description" content="{{ content | strip_html | strip_newlines | xml_escape | truncate: 160, '...' }}" />
+<meta property="og:description" content="{{ content | strip_html | strip_newlines | xml_escape | truncate: 300, '...' }}" />
+<meta name="twitter:description" content="{{ content | strip_html | strip_newlines | xml_escape | truncate: 200, '...' }}" />
+{% endif %}
+{%- if page.feature_image contains 'http' %}
+<meta property="og:image" content="{{ page.feature_image }}" />
+<meta name="twitter:image" content="{{ page.feature_image }}" />
+{%- elsif page.feature_image.size > 0 %}
+<meta property="og:image" content="{{ page.feature_image['src'] }}" />
+<meta name="twitter:image" content="{{ page.feature_image['src'] }}" />
+{%- else %}
+<meta property="og:image" content="{{ site.data.authors['stephen'].photo }}" />
+<meta name="twitter:image" content="{{ site.data.authors['stephen'].photo }}" />
+{% endif %}
+<meta property="og:url" content="https://sigep.network{{ page.url | replace:'/index.html','/'}}" />
+<meta property="og:site_name" content="SigEp Networking" />

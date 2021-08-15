@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    {% include meta_data.html %}
+    {% include site_header_css.html %}
+  </head>
+  <body class="{{ page.layout }}">
+    {% include site_header.html %}
+    <div class="container">
+      {{ content }}
+    </div>
+    {% include site_footer_javascript.html %}
+  </body>
+</html>
