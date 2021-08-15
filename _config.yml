@@ -1,0 +1,22 @@
+title: SigEp Networking
+email: contact@sigep.network
+description: >- # this means to ignore newlines until "baseurl:"
+  Directory of networking opportunities for the brothers of Sigma Phi Epsilon.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+exclude:
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
