@@ -7,50 +7,29 @@ layout: home
 ---
 
 <div class="row">
-<div class="col-md-8">
-
-{% for category in site.data.groups %}
-<h2 class="mb-3">{{ category.name }}</h2>
-<p>{{ category.description }}</p>
-<div class="row">
-{% assign sorted_goups = category.groups | sort:"name" %}
-{% for group in sorted_goups %}
-<div class="col-md-6">
-  <div class="card mb-3">
-    <div class="card-header">
-      {% if group.url %}
-      <a href="{{ group.url }}" class="card-title">{{ group.name }}</a>
-      {% else %}
-      {{ group.name }}
-      {% endif %}
+  <div class="col-md-6">
+    <div class="card mb-3">
+      <a href="https://mysigep.org/"><img src="/assets/images/mysigep.png" alt="mySigep" class="card-img-top" /></a>
+      <div class="card-body">
+        <p>Update your information on <a href="https://mysigep.org/">mySigEp</a> to stay in touch with your local chapter and to volunteer where you live.</p>
+      </div>
     </div>
-    <div class="card-body">
-      <p class="mb-0">{{ group.description }}</p>
-      {% if group.url == null %}
-      <p class="text-end mt-3 mb-0"><small><a href="mailto:contact@sigep.network?subject={{ group.name }}" class="btn btn-sm btn-primary"><i class="fas fa-plus"></i> Suggest a Group</a></small></p>
-      {% endif %}
+  </div>
+  <div class="col-md-6">
+    <div class="card mb-3">
+      <a href="https://sigep.org/the-sigep-experience/events/career-coaching/"><img src="/assets/images/career-coaching.png" alt="Career Coaching" class="card-img-top" /></a>
+      <div class="card-body">
+        <p>Sign up for <a href="https://sigep.org/the-sigep-experience/events/career-coaching/">Career Coaching</a> to mentor brothers before they enter the workforce.</p>
+      </div>
     </div>
   </div>
 </div>
-{% endfor %}
-</div>
-{% endfor %}
 
-</div>
-<div class="col-md-4">
+<h2 class="my-3">Other Opportunities</h2>
 
-<div class="card mb-3">
-  <a href="https://mysigep.org/"><img src="/assets/images/mysigep.png" alt="mySigep" class="card-img-top" /></a>
+<div class="card">
   <div class="card-body">
-    <p>Update your information on <a href="https://mysigep.org/">mySigEp</a> to stay in touch with your local chapter and to volunteer where you live.</p>
+    <h3 class="mb-3"><a href="https://www.linkedin.com/groups/36627/"><i class="fab fa-linkedin"></i> Sigma Phi Epsilon on LinkedIn</a></h3>
+    <blockquote><em>"With over 330,000 brothers, SigEp is one of the strongest and most reliable networks you could leverage. Whether you’re an undergraduate brother or an alumnus with decades of experience, you’re welcome in this group. Posts regarding networking, job openings/searches, resume feedback, and career advice are encouraged!"</em></blockquote>
   </div>
-</div>
-
-<div class="card mb-3">
-  <a href="https://sigep.org/the-sigep-experience/events/career-coaching/"><img src="/assets/images/career-coaching.png" alt="Career Coaching" class="card-img-top" /></a>
-  <div class="card-body">
-    <p>Sign up for <a href="https://sigep.org/the-sigep-experience/events/career-coaching/">Career Coaching</a> to mentor brothers before they enter the workforce.</p>
-  </div>
-</div>
-
 </div>
